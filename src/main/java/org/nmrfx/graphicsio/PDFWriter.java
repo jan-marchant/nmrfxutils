@@ -66,7 +66,7 @@ public class PDFWriter implements GraphicsIO {
             PDRectangle pageSize = page.getMediaBox();
             pageWidth = pageSize.getWidth();
             pageHeight = pageSize.getHeight();
-            contentStream = new PDPageContentStream(doc, page, false, false);
+            contentStream = new PDPageContentStream(doc, page, PDPageContentStream.AppendMode.OVERWRITE, false, false);
             // add the rotation using the current transformation matrix
             // including a translation of pageWidth to use the lower left corner as 0,0 reference
             if (landScape) {
